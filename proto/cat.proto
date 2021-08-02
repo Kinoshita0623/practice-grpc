@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package cat;
+
+option go_package = "pb/cat"; 
+
+service Cat {
+    rpc GetMyCat (GetMyCatMessage) returns (MyCatResponse) {}
+}
+
+message GetMyCatMessage {
+    string targetCat = 1;
+}
+
+message MyCatResponse {
+    string name = 1;
+    string kind = 2;
+}
